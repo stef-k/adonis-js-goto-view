@@ -1,0 +1,114 @@
+{
+	"name": "adonis-js-goto-view",
+	"displayName": "adonis-js-goto-view",
+	"description": "Alt + click to go from a controller to a related view",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"AdonisJS",
+		"JS",
+		"JavaScript",
+		"TS",
+		"Typescript"
+	],
+	"galleryBanner": {
+		"color": "#220052",
+		"theme": "dark"
+	},
+	"icon": "images/icon.png",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stef-k/adonis-js-goto-view.git"
+	},
+	"bugs": {
+		"url": "https://github.com/stef-k/adonis-js-goto-view/issues"
+	},
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:typescript",
+		"onLanguage:edge"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Adonis JS goto view configuration",
+			"properties": {
+				"adonis_js_goto_view.pathController": {
+					"type": "string",
+					"default": "/resources/views",
+					"description": "Root path to the views folder"
+				},
+				"adonis_js_goto_view.quickJump": {
+					"type": "boolean",
+					"default": true,
+					"description": "Use 'Ctrl' or 'Alt' + click"
+				},
+				"adonis_js_goto_view.folderTip": {
+					"type": "boolean",
+					"default": true,
+					"description": "Display path name"
+				},
+				"adonis_js_goto_view.maxLinesCount": {
+					"type": "integer",
+					"default": 666,
+					"description": "Maximum number of scanning rows"
+				},
+				"adonis_js_goto_view.regex": {
+					"type": "string",
+					"default": "(?<=view\\(|render\\(|@include\\(|@layout\\(|@extends\\(|@!component\\(|@component\\()(['\"])[^'\"]*\\1",
+					"description": "Custom regex for matching strings"
+				},
+				"adonis_js_goto_view.folders": {
+					"type": "object",
+					"default": {
+						"default": "/resources/views"
+					},
+					"items": {
+						"type": "string"
+					},
+					"minItems": 1,
+					"uniqueItems": true,
+					"description": "Multiple folders"
+				},
+				"adonis_js_goto_view.extensions": {
+					"type": "array",
+					"default": [
+						".edge"
+					],
+					"items": {
+						"type": "string"
+					},
+					"minItems": 1,
+					"uniqueItems": true,
+					"description": "Multiple extensions"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"vscode": "^1.1.36",
+		"vscode-test": "^1.2.2"
+	}
+}
