@@ -1,8 +1,8 @@
 {
 	"name": "adonis-js-goto-view",
-	"displayName": "adonis-js-goto-view",
+	"displayName": "Adonis JS Goto View",
 	"description": "Alt + click to go from a controller to a related view",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
